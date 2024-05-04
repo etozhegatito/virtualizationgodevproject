@@ -2,27 +2,25 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
 func main() {
-	// Handle root endpoint
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Welcome to the Products Service!")
+		fmt.Fprintf(w, "если опять таки вы это видите то сервис продуктов работает Цитаты азамат агая: вот есть же страны третьего мира по типу пакистана и вьетнама. вот вместо того чтобы кодить мы просто берем и нанимаем их за маленькие деньги. ")
 	})
 
-	// Handle health endpoint
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		fmt.Fprintf(w, "OK")
 	})
 
-	// Handle ready endpoint
 	http.HandleFunc("/ready", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		fmt.Fprintf(w, "OK")
 	})
 
-	// Start the server on port 8082
 	http.ListenAndServe(":8082", nil)
+	log.Println("этот сервис продукт работает на порте 8082")
 }
