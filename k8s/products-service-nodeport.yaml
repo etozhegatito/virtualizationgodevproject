@@ -1,12 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: products-service-nodeport
+  name: products-service
 spec:
   selector:
     app: products
   ports:
-    - protocol: TCP
-      port: 80
+    - port: 80
       targetPort: 8082
-  type: NodePort
