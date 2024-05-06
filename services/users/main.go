@@ -31,6 +31,6 @@ func main() {
 		fmt.Fprintf(bigW, "OK")
 	})
 
-	log.Println("этот сервис юзеров работает на порте 8080")
+	log.Println("Этот сервис юзеров работает на порте 8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
