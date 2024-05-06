@@ -7,28 +7,28 @@ import (
 )
 
 func main() {
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	ngga := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", ngga))
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/" {
-			http.NotFound(w, r)
+	http.HandleFunc("/", func(bigW http.ResponseWriter, req *http.Request) {
+		if req.URL.Path != "/" {
+			http.NotFound(bigW, req)
 			return
 		}
-		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		fmt.Fprintf(w, "Если это видит агай, то значит все работает успешно. "+
+		bigW.Header().Set("Content-Type", "text/html; charset=utf-8")
+		fmt.Fprintf(bigW, "Если это видит агай, то значит все работает успешно. "+
 			"Цитаты Азамат агая: вот кто бубнит? что за буб? кто там шепчется?<br>"+
 			`<img src="/static/oar2.jpg" alt="Image" style="display: block; margin-left: auto; margin-right: auto;">`)
 	})
 
-	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		fmt.Fprintf(w, "OK")
+	http.HandleFunc("/health", func(bigW http.ResponseWriter, req *http.Request) {
+		bigW.WriteHeader(http.StatusOK)
+		fmt.Fprintf(bigW, "OK")
 	})
 
-	http.HandleFunc("/ready", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		fmt.Fprintf(w, "OK")
+	http.HandleFunc("/ready", func(bigW http.ResponseWriter, req *http.Request) {
+		bigW.WriteHeader(http.StatusOK)
+		fmt.Fprintf(bigW, "OK")
 	})
 
 	log.Println("этот сервис юзеров работает на порте 8080")
