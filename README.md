@@ -62,6 +62,10 @@ A comprehensive final project for developers (virt), designed to showcase the po
    kubectl get pods
    kubectl describe pods
    kubectl get nodes
+   minikube addons enable metrics-server || minikube start --addons=metrics-server
+   kubectl autoscale deployment orders-service --cpu-percent=75 --min=1 --max=6
+   kubectl autoscale deployment products-service --cpu-percent=70 --min=1 --max=5
+   kubectl autoscale deployment users-service --cpu-percent=80 --min=1 --max=10
    kubectl get hpa
    kubectl describe hpa
    kubectl get events
