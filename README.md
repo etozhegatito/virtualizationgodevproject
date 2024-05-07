@@ -42,7 +42,6 @@ A comprehensive final project for developers (virt), designed to showcase the po
 2. **Apply the Kubernetes Configurations**  
    Use `kubectl` to apply all the Kubernetes resources:
    ```bash
-   kubectl apply -f k8s/microservices-ingress.yaml
    kubectl apply -f k8s/orders-deployment.yaml
    kubectl apply -f k8s/orders-service.yaml
    kubectl apply -f k8s/orders-service-autoscaler.yaml
@@ -51,7 +50,6 @@ A comprehensive final project for developers (virt), designed to showcase the po
    kubectl apply -f k8s/products-service.yaml
    kubectl apply -f k8s/products-service-autoscaler.yaml
    kubectl apply -f k8s/products-service-nodeport.yaml
-   kubectl apply -f k8s/service.yaml
    kubectl apply -f k8s/users-deployment.yaml
    kubectl apply -f k8s/users-service.yaml
    kubectl apply -f k8s/users-service-autoscaler.yaml
@@ -69,7 +67,6 @@ A comprehensive final project for developers (virt), designed to showcase the po
    kubectl get events
    kubectl get deployments
    kubectl get services
-   kubectl get ingress
    ```
 
 ## Project Description
