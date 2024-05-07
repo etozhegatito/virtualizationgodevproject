@@ -16,7 +16,6 @@ func main() {
 <head>
 	<title>Products Service</title>
 	<style>
-		/* Background and scrollable body setup */
 		body {
 			margin: 0;
 			padding: 0;
