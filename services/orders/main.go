@@ -26,8 +26,8 @@ func main() {
 			position: relative;
 		}
 		video {
-			width: 80%; /* Adjust the width as needed */
-			max-width: 600px; /* Maximum width */
+			width: 80%; 
+			max-width: 600px; 
 			border: 2px solid #000;
 		}
 		.overlay {
